@@ -42,5 +42,26 @@ namespace pract16
                 dgStudent.Focus();
             }
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Data.student = null;
+            WindowAddEditStudent f = new WindowAddEditStudent();
+            f.Owner = this;
+            f.ShowDialog();
+            LoadBDInDataGrid();
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgStudent.SelectedItem != null)
+            {
+                Data.student = (Student)dgStudent.SelectedItem;
+                WindowAddEditStudent f = new WindowAddEditStudent();
+                f.Owner = this;
+                f.ShowDialog();
+                LoadBDInDataGrid();
+            }
+        }
     }
 }

@@ -29,20 +29,20 @@
             </MenuItem>
         </Menu>
         <DataGrid x:Name="dgStudent" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <GroupBox Header="Редактирование:" Grid.Row="3">
-            <StackPanel VerticalAlignment="Center">
-                <Button x:Name="btnAdd" Content="Создать запись" Margin="10"/>
-                <Button x:Name="btnCreate" Content="Изменить запись" Margin="10"/>
-                <Button x:Name="btnDelete" Content="Удалить запись" Margin="10"/>
+        <GroupBox Header="Редактирование:" Grid.Row="3" Margin="10">
+            <StackPanel VerticalAlignment="Center" >
+                <Button x:Name="btnAdd" Content="Создать запись" Margin="10"  Width="200" Click="btnAdd_Click"/>
+                <Button x:Name="btnEdit" Content="Изменить запись" Margin="10"  Width="200" Click="btnEdit_Click"/>
+                <Button x:Name="btnDelete" Content="Удалить запись" Margin="10"  Width="200"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Grid.Column="1" Header="Поиск\Фильтр:" Grid.Row="3">
+        <GroupBox Grid.Column="1" Header="Поиск\Фильтр:" Grid.Row="3" Margin="10">
             <StackPanel VerticalAlignment="Center">
                 <Label Content="По фамилии:"/>
                 <TextBox x:Name="tbFind" TextWrapping="Wrap" Width="200"/>
-                <Button x:Name="btnFind" Content="Поиск" Margin="10"/>
+                <Button x:Name="btnFind" Content="Поиск" Margin="10"  Width="200"/>
                 <TextBox x:Name="tbFiltr" TextWrapping="Wrap" Width="200"/>
-                <Button x:Name="btnFiltr" Content="Фильтровать" Margin="10"/>
+                <Button x:Name="btnFiltr" Content="Фильтровать" Margin="10"  Width="200"/>
             </StackPanel>
         </GroupBox>
     </Grid>
