@@ -63,5 +63,32 @@ namespace pract16
                 LoadBDInDataGrid();
             }
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result;
+            result = MessageBox.Show("Удалить запись?", "Удаление записи", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Student row = (Student)dgStudent.SelectedItem;
+                    if (row != null)
+                    {
+                        using (StudentChoicesContext _db = new StudentChoicesContext())
+                        {
+                            _db.Students.Remove(row);
+                            _db.SaveChanges();
+                        }
+                        LoadBDInDataGrid();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка удаления!");
+                }
+            }
+            else dgStudent.Focus();
+        }
     }
 }

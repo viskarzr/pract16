@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pract16"
         mc:Ignorable="d"
-        Title="Практическая №16" Height="800" Width="700" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="Практическая №16" Height="800" Width="1000" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -28,12 +28,27 @@
                 <MenuItem></MenuItem>
             </MenuItem>
         </Menu>
-        <DataGrid x:Name="dgStudent" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <DataGrid x:Name="dgStudent" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="10*" Header="Код" Binding="{Binding id}"/>
+                <DataGridTextColumn Width="20*" Header="Фамилия" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Width="10*" Header="Имя" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Width="20*" Header="Отчество" Binding="{Binding MiddleName}"/>
+                <DataGridTextColumn Width="20*" Header="№ зачет. книжки" Binding="{Binding NumberZachotka}"/>
+                <DataGridTextColumn Width="20*" Header="Общежитие" Binding="{Binding LiveInObschaga}"/>
+                <DataGridTextColumn Width="15*" Header="Группа" Binding="{Binding Groupe}"/>
+                <DataGridTextColumn Width="15*" Header="Математика" Binding="{Binding Math}"/>
+                <DataGridTextColumn Width="15*" Header="Программирование" Binding="{Binding Programming}"/>
+                <DataGridTextColumn Width="15*" Header="История" Binding="{Binding History}"/>
+                <DataGridTextColumn Width="15*" Header="Аналитика" Binding="{Binding Analitic}"/>
+                <DataGridTextColumn Width="15*" Header="Английский" Binding="{Binding English}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <GroupBox Header="Редактирование:" Grid.Row="3" Margin="10">
             <StackPanel VerticalAlignment="Center" >
                 <Button x:Name="btnAdd" Content="Создать запись" Margin="10"  Width="200" Click="btnAdd_Click"/>
                 <Button x:Name="btnEdit" Content="Изменить запись" Margin="10"  Width="200" Click="btnEdit_Click"/>
-                <Button x:Name="btnDelete" Content="Удалить запись" Margin="10"  Width="200"/>
+                <Button x:Name="btnDelete" Content="Удалить запись" Margin="10"  Width="200" Click="btnDelete_Click"/>
             </StackPanel>
         </GroupBox>
         <GroupBox Grid.Column="1" Header="Поиск\Фильтр:" Grid.Row="3" Margin="10">

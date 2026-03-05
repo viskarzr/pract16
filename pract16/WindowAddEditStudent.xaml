@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pract16"
         mc:Ignorable="d"
+        x:Name="AddEdit"
         Height="600" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded" Title="Добавление записи">
     <Grid Margin="40,0">
         <Grid.RowDefinitions>
@@ -36,14 +37,14 @@
         <Label Content="История:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="8"/>
         <Label Content="Аналитика:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="9"/>
         <Label Content="Английский:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="10"/>
-        <Button x:Name="btnAdd" Content="Добавить"  Grid.Row="11" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14"/>
+        <Button x:Name="btnAdd" Content="Добавить"  Grid.Row="11" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Click="btnAdd_Click"/>
         <Button x:Name="btnCancel" Grid.Column="1" Content="Отмена" Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14"/>
         <TextBox x:Name="tbLastName" Text="{Binding Path=LastName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox x:Name="tbFirstName" Text="{Binding Path=FirstName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
         <TextBox x:Name="tbMiddleName" Text="{Binding Path=MiddleName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
         <TextBox x:Name="tbNumber" Text="{Binding Path=NumberZachotka}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center"/>
         <TextBox x:Name="tbGroup" Text="{Binding Path=Groupe}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center"/>
-        <ComboBox x:Name="tbLiveIn" Text="{Binding Path=LiveInObschaga}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Width="120">
+        <ComboBox x:Name="cbLiveIn" Text="{Binding Path=LiveInObschaga}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Width="120">
             <ComboBoxItem Content="Да"/>
             <ComboBoxItem Content="Нет"/>
         </ComboBox>
@@ -59,7 +60,7 @@
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="0"/>
         </ComboBox>
-        <ComboBox x:Name="CbAnalitic" Text="{Binding Path=Analitic}" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Width="120">
+        <ComboBox x:Name="cbAnalitic" Text="{Binding Path=Analitic}" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Width="120">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="0"/>
         </ComboBox>
