@@ -30,15 +30,15 @@
         </Menu>
         <DataGrid x:Name="dgStudent" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="10*" Header="Код" Binding="{Binding id}"/>
-                <DataGridTextColumn Width="20*" Header="Фамилия" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Width="10*" Header="Код" Binding="{Binding Id}"/>
+                <DataGridTextColumn Width="15*" Header="Фамилия" Binding="{Binding LastName}"/>
                 <DataGridTextColumn Width="10*" Header="Имя" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Width="20*" Header="Отчество" Binding="{Binding MiddleName}"/>
-                <DataGridTextColumn Width="20*" Header="№ зачет. книжки" Binding="{Binding NumberZachotka}"/>
-                <DataGridTextColumn Width="20*" Header="Общежитие" Binding="{Binding LiveInObschaga}"/>
-                <DataGridTextColumn Width="15*" Header="Группа" Binding="{Binding Groupe}"/>
+                <DataGridTextColumn Width="15*" Header="№ зачетки" Binding="{Binding NumberZachotka}"/>
+                <DataGridTextColumn Width="15*" Header="Общежитие" Binding="{Binding LiveInObschaga}"/>
+                <DataGridTextColumn Width="10*" Header="Группа" Binding="{Binding Groupe}"/>
                 <DataGridTextColumn Width="15*" Header="Математика" Binding="{Binding Math}"/>
-                <DataGridTextColumn Width="15*" Header="Программирование" Binding="{Binding Programming}"/>
+                <DataGridTextColumn Width="25*" Header="Программирование" Binding="{Binding Programming}"/>
                 <DataGridTextColumn Width="15*" Header="История" Binding="{Binding History}"/>
                 <DataGridTextColumn Width="15*" Header="Аналитика" Binding="{Binding Analitic}"/>
                 <DataGridTextColumn Width="15*" Header="Английский" Binding="{Binding English}"/>
@@ -55,9 +55,9 @@
             <StackPanel VerticalAlignment="Center">
                 <Label Content="По фамилии:"/>
                 <TextBox x:Name="tbFind" TextWrapping="Wrap" Width="200"/>
-                <Button x:Name="btnFind" Content="Поиск" Margin="10"  Width="200"/>
+                <Button x:Name="btnFind" Content="Поиск" Margin="10"  Width="200" Click="btnFind_Click"/>
                 <TextBox x:Name="tbFiltr" TextWrapping="Wrap" Width="200"/>
-                <Button x:Name="btnFiltr" Content="Фильтровать" Margin="10"  Width="200"/>
+                <Button x:Name="btnFiltr" Content="Фильтровать" Margin="10"  Width="200" Click="btnFiltr_Click"/>
             </StackPanel>
         </GroupBox>
     </Grid>

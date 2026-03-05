@@ -40,9 +40,20 @@ namespace pract16
             {
                 AddEdit.Title = "Изменить записи";
                 btnAdd.Content = "Изменить";
+                _student = _db.Students.Find(Data.student.Id);
             }
             AddEdit.DataContext = _student;
+            //SetComboBoxValues();
         }
+
+        //private void SetComboBoxValues()
+        //{
+        //    cbMath.Text = _student.Math?.ToString() ?? "0";
+        //    cbProg.Text = _student.Prog?.ToString() ?? "0";
+        //    cbHistory.Text = _student.History?.ToString() ?? "0";
+        //    cbAnalitic.Text = _student.Analitic?.ToString() ?? "0";
+        //    cbEng.Text = _student.Eng?.ToString() ?? "0";
+        //}
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -50,7 +61,7 @@ namespace pract16
             if (tbLastName.Text.Length == 0) errors.AppendLine("Введите Фамилию");
             if (tbFirstName.Text.Length == 0) errors.AppendLine("Введите Имя");
             if (tbNumber.Text.Length == 0) errors.AppendLine("Введите нормер зачетной книжки");
-            if (cbLiveIn.Text != "Да" && cbLiveIn.Text != "Нет") errors.AppendLine("Введите проживает ли студент в общежитии");
+            if (cbLiveIn.Text != "True" && cbLiveIn.Text != "False") errors.AppendLine("Введите проживает ли студент в общежитии");
             if (cbMath.Text != "0" && cbMath.Text != "1") errors.AppendLine("Введите хочет ли студент изучать математику, если да введите 1, если нет - 0");
             if (cbProg.Text !="0" && cbProg.Text !="1") errors.AppendLine("Введите хочет ли студент изучать программирование, если да введите 1, если нет - 0");
             if (cbHistory.Text != "0" && cbHistory.Text != "1") errors.AppendLine("Введите хочет ли студент изучать историю, если да введите 1, если нет - 0");

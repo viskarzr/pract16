@@ -45,8 +45,8 @@
         <TextBox x:Name="tbNumber" Text="{Binding Path=NumberZachotka}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center"/>
         <TextBox x:Name="tbGroup" Text="{Binding Path=Groupe}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center"/>
         <ComboBox x:Name="cbLiveIn" Text="{Binding Path=LiveInObschaga}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Width="120">
-            <ComboBoxItem Content="Да"/>
-            <ComboBoxItem Content="Нет"/>
+            <ComboBoxItem Content="True"/>
+            <ComboBoxItem Content="False"/>
         </ComboBox>
         <ComboBox x:Name="cbMath" Text="{Binding Path=Math}" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Width="120">
             <ComboBoxItem Content="1"/>

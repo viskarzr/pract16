@@ -1,4 +1,5 @@
-﻿using pract16.ModelsBD;
+﻿using Microsoft.IdentityModel.Tokens;
+using pract16.ModelsBD;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -89,6 +90,36 @@ namespace pract16
                 }
             }
             else dgStudent.Focus();
+        }
+
+        private void btnFind_Click(object sender, RoutedEventArgs e)
+        {
+            List <Student> listItem = (List <Student>)dgStudent.ItemsSource;
+            var filtered = listItem.Where(p=> p.LastName.Contains(tbFind.Text));
+            if (filtered.Count()>0)
+            {
+                var item = filtered.First();
+                dgStudent.SelectedItem = item;
+                dgStudent.ScrollIntoView(item);
+                dgStudent.Focus();
+            }
+            tbFind.Clear();
+        }
+
+        private void btnFiltr_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbFiltr.Text.IsNullOrEmpty() == false)
+            {
+                using (StudentChoicesContext _db = new StudentChoicesContext())
+                {
+                    var filtered = _db.Students.Where(p => p.LastName == tbFiltr.Text);
+                    dgStudent.ItemsSource = filtered.ToList();
+                }
+            }
+            else 
+            {
+                LoadBDInDataGrid();
+            }
         }
     }
 }
