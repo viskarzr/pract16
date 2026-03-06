@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pract16"
+        xmlns:converters ="clr-namespace:pract16"
         mc:Ignorable="d"
         x:Name="AddEdit"
         Height="600" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded" Title="Добавление записи">
+    <Window.Resources>
+        <converters:BoolToIntConverter x:Key="BoolToIntConverter"/>
+    </Window.Resources>
     <Grid Margin="40,0">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -38,7 +42,7 @@
         <Label Content="Аналитика:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="9"/>
         <Label Content="Английский:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="10"/>
         <Button x:Name="btnAdd" Content="Добавить"  Grid.Row="11" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Click="btnAdd_Click"/>
-        <Button x:Name="btnCancel" Grid.Column="1" Content="Отмена" Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14"/>
+        <Button x:Name="btnCancel" Grid.Column="1" Content="Отмена" Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Click="btnCancel_Click"/>
         <TextBox x:Name="tbLastName" Text="{Binding Path=LastName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox x:Name="tbFirstName" Text="{Binding Path=FirstName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
         <TextBox x:Name="tbMiddleName" Text="{Binding Path=MiddleName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
@@ -49,8 +53,8 @@
             <ComboBoxItem Content="False"/>
         </ComboBox>
         <ComboBox x:Name="cbMath" Text="{Binding Path=Math}" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Width="120">
-            <ComboBoxItem Content="1"/>
-            <ComboBoxItem Content="0"/>
+            <!--<ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="0"/>-->
         </ComboBox>
         <ComboBox x:Name="cbProg" Text="{Binding Path=Programming}" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Width="120">
             <ComboBoxItem Content="1"/>

@@ -93,5 +93,10 @@ namespace pract16
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -112,7 +112,7 @@ namespace pract16
             {
                 using (StudentChoicesContext _db = new StudentChoicesContext())
                 {
-                    var filtered = _db.Students.Where(p => p.LastName == tbFiltr.Text);
+                    var filtered = _db.Students.Where(p => p.Groupe.Contains(tbFiltr.Text));
                     dgStudent.ItemsSource = filtered.ToList();
                 }
             }

@@ -4,8 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pract16"
+        xmlns:converters ="clr-namespace:pract16"
         mc:Ignorable="d"
         Title="Практическая №16" Height="800" Width="1000" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Resources>
+        <converters:BoolToIntConverter x:Key="BoolToIntConverter"/>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -19,13 +24,13 @@
         </Grid.ColumnDefinitions>
         <Menu VerticalAlignment="Top" Grid.ColumnSpan="2">
             <MenuItem Header="Таблица">
-                <MenuItem Header=" fadadad"></MenuItem>
-                <MenuItem Header="ddasdsad"></MenuItem>
-                <MenuItem Header=""></MenuItem>
+                <MenuItem x:Name="muAdd" Header="Добавить запись" Click="btnAdd_Click"></MenuItem>
+                <MenuItem x:Name="muEdit" Header="Изменить запись" Click="btnEdit_Click"></MenuItem>
+                <MenuItem x:Name="muDelete" Header="Удалить запись" Click="btnDelete_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="О программе">
-                <MenuItem Header="dasdsadsa"></MenuItem>
-                <MenuItem></MenuItem>
+                <MenuItem x:Name="muInfo" Header="Информация"></MenuItem>
+                <MenuItem x:Name="muExit" Header="Выход"></MenuItem>
             </MenuItem>
         </Menu>
         <DataGrid x:Name="dgStudent" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
@@ -37,11 +42,11 @@
                 <DataGridTextColumn Width="15*" Header="№ зачетки" Binding="{Binding NumberZachotka}"/>
                 <DataGridTextColumn Width="15*" Header="Общежитие" Binding="{Binding LiveInObschaga}"/>
                 <DataGridTextColumn Width="10*" Header="Группа" Binding="{Binding Groupe}"/>
-                <DataGridTextColumn Width="15*" Header="Математика" Binding="{Binding Math}"/>
-                <DataGridTextColumn Width="25*" Header="Программирование" Binding="{Binding Programming}"/>
-                <DataGridTextColumn Width="15*" Header="История" Binding="{Binding History}"/>
-                <DataGridTextColumn Width="15*" Header="Аналитика" Binding="{Binding Analitic}"/>
-                <DataGridTextColumn Width="15*" Header="Английский" Binding="{Binding English}"/>
+                <DataGridTextColumn Width="15*" Header="Математика" Binding="{Binding Math, Converter={StaticResource BoolToIntConverter}}"/>
+                <DataGridTextColumn Width="25*" Header="Программирование" Binding="{Binding Programming, Converter={StaticResource BoolToIntConverter}}"/>
+                <DataGridTextColumn Width="15*" Header="История" Binding="{Binding History, Converter={StaticResource BoolToIntConverter}}"/>
+                <DataGridTextColumn Width="15*" Header="Аналитика" Binding="{Binding Analitic, Converter={StaticResource BoolToIntConverter}}"/>
+                <DataGridTextColumn Width="15*" Header="Английский" Binding="{Binding English, Converter={StaticResource BoolToIntConverter}}"/>
             </DataGrid.Columns>
         </DataGrid>
         <GroupBox Header="Редактирование:" Grid.Row="3" Margin="10">
@@ -53,9 +58,10 @@
         </GroupBox>
         <GroupBox Grid.Column="1" Header="Поиск\Фильтр:" Grid.Row="3" Margin="10">
             <StackPanel VerticalAlignment="Center">
-                <Label Content="По фамилии:"/>
+                <Label Content="Поиск по фамилии:"/>
                 <TextBox x:Name="tbFind" TextWrapping="Wrap" Width="200"/>
                 <Button x:Name="btnFind" Content="Поиск" Margin="10"  Width="200" Click="btnFind_Click"/>
+                <Label Content="Фильтрация по группам:"/>
                 <TextBox x:Name="tbFiltr" TextWrapping="Wrap" Width="200"/>
                 <Button x:Name="btnFiltr" Content="Фильтровать" Margin="10"  Width="200" Click="btnFiltr_Click"/>
             </StackPanel>
