@@ -52,23 +52,24 @@
             <ComboBoxItem Content="True"/>
             <ComboBoxItem Content="False"/>
         </ComboBox>
-        <ComboBox x:Name="cbMath" Text="{Binding Path=Math}" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Width="120">
-            <!--<ComboBoxItem Content="1"/>
-            <ComboBoxItem Content="0"/>-->
-        </ComboBox>
-        <ComboBox x:Name="cbProg" Text="{Binding Path=Programming}" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Width="120">
+        <ComboBox x:Name="cbMath" Text="{Binding Path=Math}" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Width="120" SelectedValue="{Binding Math, Converter={StaticResource BoolToIntConverter}}" SelectedValuePath="Content">
+            
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="0"/>
         </ComboBox>
-        <ComboBox x:Name="cbHistory" Text="{Binding Path=History}" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Width="120">
+        <ComboBox x:Name="cbProg" Text="{Binding Path=Programming}" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Width="120" SelectedValue="{Binding Programming, Converter={StaticResource BoolToIntConverter}}" SelectedValuePath="Content">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="0"/>
         </ComboBox>
-        <ComboBox x:Name="cbAnalitic" Text="{Binding Path=Analitic}" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Width="120">
+        <ComboBox x:Name="cbHistory" Text="{Binding Path=History}" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Width="120" SelectedValue="{Binding History, Converter={StaticResource BoolToIntConverter}}" SelectedValuePath="Content">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="0"/>
         </ComboBox>
-        <ComboBox x:Name="cbEng" Text="{Binding Path=English}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Width="120">
+        <ComboBox x:Name="cbAnalitic" Text="{Binding Path=Analitic}" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Width="120" SelectedValue="{Binding Analitic, Converter={StaticResource BoolToIntConverter}}" SelectedValuePath="Content">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="0"/>
+        </ComboBox>
+        <ComboBox x:Name="cbEng" Text="{Binding Path=English}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Width="120" SelectedValue="{Binding English, Converter={StaticResource BoolToIntConverter}}" SelectedValuePath="Content">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="0"/>
         </ComboBox>

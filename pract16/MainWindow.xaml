@@ -29,8 +29,8 @@
                 <MenuItem x:Name="muDelete" Header="Удалить запись" Click="btnDelete_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="О программе">
-                <MenuItem x:Name="muInfo" Header="Информация"></MenuItem>
-                <MenuItem x:Name="muExit" Header="Выход"></MenuItem>
+                <MenuItem x:Name="muInfo" Header="Информация" Click="muInfo_Click"></MenuItem>
+                <MenuItem x:Name="muExit" Header="Выход" Click="muExit_Click"></MenuItem>
             </MenuItem>
         </Menu>
         <DataGrid x:Name="dgStudent" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">

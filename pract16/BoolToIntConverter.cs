@@ -7,7 +7,7 @@ using System.Windows.Data;
 
 namespace pract16
 {
-    internal class BoolToIntConverter:IValueConverter
+    public class BoolToIntConverter:IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
@@ -18,12 +18,11 @@ namespace pract16
             return 0;
         }
 
-        // Конвертация из int в bool 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (value is int intValue)
+            if (value is string stringValue)
             {
-                return intValue == 1;
+                return stringValue == "1";
             }
             return false;
         }

@@ -121,5 +121,15 @@ namespace pract16
                 LoadBDInDataGrid();
             }
         }
+
+        private void muExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void muInfo_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Практическая работа №16 - Создание приложения с БД\r\nСведения о выборе дисциплины студентом. База данных должна содержать следующую информацию:\r\n фамилию, имя, отчество студента, номер зачетной книжки и сведения о том, \r\nживет ли студент в общежитии, индекс группы, а также пять дисциплин\r\n(1 – желает изучать, 0 – не желает).\r\n Выполнила: студентка гр.ИСП-31\r\nКирюшова В.");
+        }
     }
 }
