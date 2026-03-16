@@ -43,11 +43,11 @@
         <Label Content="Английский:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="10"/>
         <Button x:Name="btnAdd" Content="Добавить"  Grid.Row="11" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Click="btnAdd_Click"/>
         <Button x:Name="btnCancel" Grid.Column="1" Content="Отмена" Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Click="btnCancel_Click"/>
-        <TextBox x:Name="tbLastName" Text="{Binding Path=LastName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBox x:Name="tbFirstName" Text="{Binding Path=FirstName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBox x:Name="tbMiddleName" Text="{Binding Path=MiddleName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
-        <TextBox x:Name="tbNumber" Text="{Binding Path=NumberZachotka}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center"/>
-        <TextBox x:Name="tbGroup" Text="{Binding Path=Groupe}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbLastName" Text="{Binding Path=LastName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" MaxLength="50"/>
+        <TextBox x:Name="tbFirstName" Text="{Binding Path=FirstName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" MaxLength="50"/>
+        <TextBox x:Name="tbMiddleName" Text="{Binding Path=MiddleName}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" MaxLength="50"/>
+        <TextBox x:Name="tbNumber" Text="{Binding Path=NumberZachotka}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" MaxLength="15"/>
+        <TextBox x:Name="tbGroup" Text="{Binding Path=Groupe}" Grid.Column="1"  TextWrapping="Wrap"  Width="120" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" MaxLength="10"/>
         <ComboBox x:Name="cbLiveIn" Text="{Binding Path=LiveInObschaga}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Width="120">
             <ComboBoxItem Content="True"/>
             <ComboBoxItem Content="False"/>

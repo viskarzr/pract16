@@ -43,17 +43,7 @@ namespace pract16
                 _student = _db.Students.Find(Data.student.Id);
             }
             AddEdit.DataContext = _student;
-            //SetComboBoxValues();
         }
-
-        //private void SetComboBoxValues()
-        //{
-        //    cbMath.Text = _student.Math?.ToString() ?? "0";
-        //    cbProg.Text = _student.Prog?.ToString() ?? "0";
-        //    cbHistory.Text = _student.History?.ToString() ?? "0";
-        //    cbAnalitic.Text = _student.Analitic?.ToString() ?? "0";
-        //    cbEng.Text = _student.Eng?.ToString() ?? "0";
-        //}
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
